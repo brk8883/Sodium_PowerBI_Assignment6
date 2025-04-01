@@ -1,0 +1,557 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "en-IN",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/DESKTOP-T1GSK70\\SQLEXPRESS;SaleDW",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "DESKTOP-T1GSK70\\SQLEXPRESS",
+            "database": "SaleDW"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "Windows",
+          "kind": "SQL",
+          "path": "desktop-t1gsk70\\sqlexpress;SaleDW",
+          "Username": "Admin",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "City",
+        "columns": [
+          {
+            "name": "CityKey",
+            "dataType": "int64",
+            "sourceColumn": "CityKey"
+          },
+          {
+            "name": "WWICityID",
+            "dataType": "int64",
+            "sourceColumn": "WWICityID"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City"
+          },
+          {
+            "name": "StateProvince",
+            "dataType": "string",
+            "sourceColumn": "StateProvince"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country"
+          },
+          {
+            "name": "Continent",
+            "dataType": "string",
+            "sourceColumn": "Continent"
+          },
+          {
+            "name": "SalesTerritory",
+            "dataType": "string",
+            "sourceColumn": "SalesTerritory"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region"
+          },
+          {
+            "name": "Subregion",
+            "dataType": "string",
+            "sourceColumn": "Subregion"
+          },
+          {
+            "name": "LatestRecordedPopulation",
+            "dataType": "int64",
+            "sourceColumn": "LatestRecordedPopulation"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-T1GSK70\\SQLEXPRESS;SaleDW\",",
+                "    dbo_City = Source{[Schema=\"dbo\",Item=\"City\"]}[Data]",
+                "in",
+                "    dbo_City"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Customer",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          },
+          {
+            "name": "WWICustomerID",
+            "dataType": "int64",
+            "sourceColumn": "WWICustomerID"
+          },
+          {
+            "name": "Customer",
+            "dataType": "string",
+            "sourceColumn": "Customer"
+          },
+          {
+            "name": "BillToCustomer",
+            "dataType": "string",
+            "sourceColumn": "BillToCustomer"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category"
+          },
+          {
+            "name": "BuyingGroup",
+            "dataType": "string",
+            "sourceColumn": "BuyingGroup"
+          },
+          {
+            "name": "PrimaryContact",
+            "dataType": "string",
+            "sourceColumn": "PrimaryContact"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-T1GSK70\\SQLEXPRESS;SaleDW\",",
+                "    dbo_Customer = Source{[Schema=\"dbo\",Item=\"Customer\"]}[Data]",
+                "in",
+                "    dbo_Customer"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Employee",
+        "columns": [
+          {
+            "name": "EmployeeKey",
+            "dataType": "int64",
+            "sourceColumn": "EmployeeKey"
+          },
+          {
+            "name": "WWIEmployeeID",
+            "dataType": "int64",
+            "sourceColumn": "WWIEmployeeID"
+          },
+          {
+            "name": "Employee",
+            "dataType": "string",
+            "sourceColumn": "Employee"
+          },
+          {
+            "name": "PreferredName",
+            "dataType": "string",
+            "sourceColumn": "PreferredName"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-T1GSK70\\SQLEXPRESS;SaleDW\",",
+                "    dbo_Employee = Source{[Schema=\"dbo\",Item=\"Employee\"]}[Data]",
+                "in",
+                "    dbo_Employee"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTable",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "string",
+            "sourceColumn": "Date"
+          },
+          {
+            "name": "DayNumber",
+            "dataType": "int64",
+            "sourceColumn": "DayNumber"
+          },
+          {
+            "name": "Day",
+            "dataType": "int64",
+            "sourceColumn": "Day"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month"
+          },
+          {
+            "name": "ShortMonth",
+            "dataType": "string",
+            "sourceColumn": "ShortMonth"
+          },
+          {
+            "name": "CalendarMonthNumber",
+            "dataType": "int64",
+            "sourceColumn": "CalendarMonthNumber"
+          },
+          {
+            "name": "CalendarMonthLabel",
+            "dataType": "string",
+            "sourceColumn": "CalendarMonthLabel"
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "sourceColumn": "CalendarYear"
+          },
+          {
+            "name": "CalendarYearLabel",
+            "dataType": "string",
+            "sourceColumn": "CalendarYearLabel"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-T1GSK70\\SQLEXPRESS;SaleDW\",",
+                "    dbo_DateTable = Source{[Schema=\"dbo\",Item=\"DateTable\"]}[Data]",
+                "in",
+                "    dbo_DateTable"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Sale",
+        "columns": [
+          {
+            "name": "SaleKey",
+            "dataType": "int64",
+            "sourceColumn": "SaleKey"
+          },
+          {
+            "name": "CityKey",
+            "dataType": "int64",
+            "sourceColumn": "CityKey"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          },
+          {
+            "name": "BillToCustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "BillToCustomerKey"
+          },
+          {
+            "name": "StockItemKey",
+            "dataType": "int64",
+            "sourceColumn": "StockItemKey"
+          },
+          {
+            "name": "InvoiceDateKey",
+            "dataType": "string",
+            "sourceColumn": "InvoiceDateKey"
+          },
+          {
+            "name": "DeliveryDateKey",
+            "dataType": "string",
+            "sourceColumn": "DeliveryDateKey"
+          },
+          {
+            "name": "SalespersonKey",
+            "dataType": "int64",
+            "sourceColumn": "SalespersonKey"
+          },
+          {
+            "name": "WWIInvoiceID",
+            "dataType": "int64",
+            "sourceColumn": "WWIInvoiceID"
+          },
+          {
+            "name": "Package",
+            "dataType": "string",
+            "sourceColumn": "Package"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Quantity"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice"
+          },
+          {
+            "name": "TaxRate",
+            "dataType": "double",
+            "sourceColumn": "TaxRate"
+          },
+          {
+            "name": "TotalExcludingTax",
+            "dataType": "double",
+            "sourceColumn": "TotalExcludingTax"
+          },
+          {
+            "name": "TaxAmount",
+            "dataType": "double",
+            "sourceColumn": "TaxAmount"
+          },
+          {
+            "name": "Profit",
+            "dataType": "double",
+            "sourceColumn": "Profit"
+          },
+          {
+            "name": "TotalIncludingTax",
+            "dataType": "double",
+            "sourceColumn": "TotalIncludingTax"
+          },
+          {
+            "name": "TotalDryItems",
+            "dataType": "int64",
+            "sourceColumn": "TotalDryItems"
+          },
+          {
+            "name": "TotalChillerItems",
+            "dataType": "int64",
+            "sourceColumn": "TotalChillerItems"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-T1GSK70\\SQLEXPRESS;SaleDW\",",
+                "    dbo_Sale = Source{[Schema=\"dbo\",Item=\"Sale\"]}[Data]",
+                "in",
+                "    dbo_Sale"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "StockItem",
+        "columns": [
+          {
+            "name": "StockItemKey",
+            "dataType": "int64",
+            "sourceColumn": "StockItemKey"
+          },
+          {
+            "name": "WWIStockItemID",
+            "dataType": "int64",
+            "sourceColumn": "WWIStockItemID"
+          },
+          {
+            "name": "StockItem",
+            "dataType": "string",
+            "sourceColumn": "StockItem"
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color"
+          },
+          {
+            "name": "SellingPackage",
+            "dataType": "string",
+            "sourceColumn": "SellingPackage"
+          },
+          {
+            "name": "BuyingPackage",
+            "dataType": "string",
+            "sourceColumn": "BuyingPackage"
+          },
+          {
+            "name": "Brand",
+            "dataType": "string",
+            "sourceColumn": "Brand"
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "sourceColumn": "Size"
+          },
+          {
+            "name": "LeadTimeDays",
+            "dataType": "int64",
+            "sourceColumn": "LeadTimeDays"
+          },
+          {
+            "name": "QuantityPerOuter",
+            "dataType": "int64",
+            "sourceColumn": "QuantityPerOuter"
+          },
+          {
+            "name": "IsChillerStock",
+            "dataType": "boolean",
+            "sourceColumn": "IsChillerStock"
+          },
+          {
+            "name": "Barcode",
+            "dataType": "string",
+            "sourceColumn": "Barcode"
+          },
+          {
+            "name": "TaxRate",
+            "dataType": "double",
+            "sourceColumn": "TaxRate"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice"
+          },
+          {
+            "name": "RecommendedRetailPrice",
+            "dataType": "double",
+            "sourceColumn": "RecommendedRetailPrice"
+          },
+          {
+            "name": "TypicalWeightPerUnit",
+            "dataType": "double",
+            "sourceColumn": "TypicalWeightPerUnit"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-T1GSK70\\SQLEXPRESS;SaleDW\",",
+                "    dbo_StockItem = Source{[Schema=\"dbo\",Item=\"StockItem\"]}[Data]",
+                "in",
+                "    dbo_StockItem"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "34de099f-3ce0-406c-9ed8-f54a40e04f20",
+        "fromTable": "Sale",
+        "fromColumn": "BillToCustomerKey",
+        "toTable": "Customer",
+        "toColumn": "CustomerKey",
+        "isActive": false
+      },
+      {
+        "name": "2bf85788-1dba-4eed-9334-3e68368f86b9",
+        "fromTable": "Sale",
+        "fromColumn": "DeliveryDateKey",
+        "toTable": "DateTable",
+        "toColumn": "Date",
+        "isActive": false
+      },
+      {
+        "name": "5f770989-1f6f-49c6-8f37-2ec0a7363608",
+        "fromTable": "Sale",
+        "fromColumn": "CityKey",
+        "toTable": "City",
+        "toColumn": "CityKey"
+      },
+      {
+        "name": "75e8431b-1367-4b6e-9742-bfae5bbd3a23",
+        "fromTable": "Sale",
+        "fromColumn": "CustomerKey",
+        "toTable": "Customer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "2183f30f-673b-4ac9-a191-a2bf7f896212",
+        "fromTable": "Sale",
+        "fromColumn": "SalespersonKey",
+        "toTable": "Employee",
+        "toColumn": "EmployeeKey"
+      },
+      {
+        "name": "46bb90e4-1f35-4bce-95f2-1754ebc14f51",
+        "fromTable": "Sale",
+        "fromColumn": "InvoiceDateKey",
+        "toTable": "DateTable",
+        "toColumn": "Date"
+      },
+      {
+        "name": "5cf1c02b-9a00-4af8-bb84-f168ec532e82",
+        "fromTable": "Sale",
+        "fromColumn": "StockItemKey",
+        "toTable": "StockItem",
+        "toColumn": "StockItemKey"
+      },
+      {
+        "name": "79c8e499-8a7c-4b27-a84f-4c0f4897f3a9",
+        "fromCardinality": "one",
+        "fromTable": "Sale",
+        "fromColumn": "SaleKey",
+        "toTable": "City",
+        "toColumn": "CityKey",
+        "isActive": false,
+        "crossFilteringBehavior": "bothDirections"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "700"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

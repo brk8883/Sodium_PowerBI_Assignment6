@@ -1,0 +1,8 @@
+C:\Users\Admin\Desktop\loyalist\sem3\Data Warehouse\Assignment 5+6\Sodium_Assignment_5+6\Sodium_Assignment_6\Assign06_SSAS_Cube_Project\bin\Model.asdatabase
+C:\Users\Admin\Desktop\loyalist\sem3\Data Warehouse\Assignment 5+6\Sodium_Assignment_5+6\Sodium_Assignment_6\Assign06_SSAS_Cube_Project\bin\Model.deploymenttargets
+C:\Users\Admin\Desktop\loyalist\sem3\Data Warehouse\Assignment 5+6\Sodium_Assignment_5+6\Sodium_Assignment_6\Assign06_SSAS_Cube_Project\bin\Model.deploymentoptions
+C:\Users\Admin\Desktop\loyalist\sem3\Data Warehouse\Assignment 5+6\Sodium_Assignment_5+6\Sodium_Assignment_6\Assign06_SSAS_Cube_Project\obj\Development\Assign06_SSAS_Cube_Project.smproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\loyalist\sem3\Data Warehouse\Assignment 5+6\Sodium_Assignment_5+6\Sodium_Assignment_6\Assign06_SSAS_Cube_Project\obj\Development\Assign06_SSAS_Cube_Project.smproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\loyalist\sem3\Data Warehouse\Assignment 5+6\Sodium_Assignment_5+6\Sodium_Assignment_6\Assign06_SSAS_Cube_Project\obj\Development\Model.asdatabase
+C:\Users\Admin\Desktop\loyalist\sem3\Data Warehouse\Assignment 5+6\Sodium_Assignment_5+6\Sodium_Assignment_6\Assign06_SSAS_Cube_Project\obj\Development\Model.deploymentoptions
+C:\Users\Admin\Desktop\loyalist\sem3\Data Warehouse\Assignment 5+6\Sodium_Assignment_5+6\Sodium_Assignment_6\Assign06_SSAS_Cube_Project\obj\Development\Model.deploymenttargets
